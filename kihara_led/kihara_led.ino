@@ -97,7 +97,7 @@ void setup()
 
 void loop() 
 {
-  test2();
+  test4();
   
   /*
   // 受信データ処理
@@ -336,3 +336,31 @@ void test2()
   return;
 }
 
+void test3()
+{
+  char buff[port_amount];
+  int k = 0;
+  
+  while(1)
+  {
+    for(int i = 0; i < port_amount;i++)
+      buff[i] = 255;
+    light(buff, port_amount);
+  }
+  return;
+}
+
+
+void test4()
+{
+  char buff[] = {255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0}; // blue
+  //char buff[] = {0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0}; // red
+  //char buff[] = {0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255}; //green
+  int k = 0;
+  
+  while(1)
+  {
+    light(buff, port_amount);
+  }
+  return;
+}
